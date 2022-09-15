@@ -6,7 +6,7 @@
   "module": "dist/esm/index.js",
   "types": "dist/esm/index.d.ts",
   "scripts": {
-    "build": "npm run clean && tsc && rollup -c rollup.config.js",
+    "build": "npm run clean && npm run docgen && tsc && rollup -c rollup.config.js",
     "clean": "rimraf ./dist",
     "verify": "npm run verify:ios && npm run verify:android && npm run verify:web",
     "verify:ios": "cd ios && pod install && xcodebuild -workspace Plugin.xcworkspace -scheme Plugin && cd ..",
@@ -20,7 +20,7 @@
     "docgen": "docgen --api IntercomPlugin --output-readme README.md --output-json dist/docs.json",
     "watch": "tsc --watch",
     "prepublishOnly": "npm run build",
-    "postinstall": "npm run build",
+    "prepare": "npm run build",
     "release:patch": "standard-version release --release-as patch",
     "release:minor": "standard-version release --release-as minor",
     "release:major": "standard-version release --release-as major",
