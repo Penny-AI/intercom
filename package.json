@@ -20,6 +20,7 @@
     "docgen": "docgen --api IntercomPlugin --output-readme README.md --output-json dist/docs.json",
     "watch": "tsc --watch",
     "prepublishOnly": "npm run build",
+    "postinstall": "npm run build",
     "release:patch": "standard-version release --release-as patch",
     "release:minor": "standard-version release --release-as minor",
     "release:major": "standard-version release --release-as major",
