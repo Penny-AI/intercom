@@ -75,7 +75,7 @@ public class IntercomPlugin: CAPPlugin {
     }
     let customAttributes = call.getObject("customAttributes")
     userAttributes.customAttributes = customAttributes
-    Intercom.updateUser(userAttributes)
+    Intercom.updateUser(with: userAttributes)
     call.resolve()
   }
 
