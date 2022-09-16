@@ -47,7 +47,7 @@ public class IntercomPlugin: CAPPlugin {
   }
 
   @objc func registerUnidentifiedUser(_ call: CAPPluginCall) {
-    Intercom.registerUnidentifiedUser()
+    Intercom.loginUnidentifiedUser()
     call.resolve()
   }
 
